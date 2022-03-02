@@ -2,14 +2,21 @@ const express=require('express');
 var bodyParser = require('body-parser')
 const mongoose= require('mongoose');
 const app=express();
+const path = require('path');
+const cors = require('cors');
 const router=express.Router();
-const foodRouter = require('./app/router/foodRoute');
+const foodRouter = require(path.join(__dirname,'./app/router/foodRoute'));
 
 
 //mongodb : 27017 
 
-const uri = "mongodb+srv://aryasaumitra:qwerty123@testcluster.odhvs.mongodb.net/FoodDB?retryWrites=true&w=majority"
-mongoose.connect(uri);
+mongoose.connect(process.env.MONGODBURL);
+
+app.use(cors(
+    {
+        'origin':'*'
+    }
+))
 
 
 var db=mongoose.connection;
@@ -224,6 +231,6 @@ router.get('/logout',(req,res)=>{
 
 app.use('/',router);
 
-app.listen( process.env.port || 3000,()=>{
+app.listen( process.env.PORT || 3000,()=>{
     console.log(`web server is running at port ${process.env.port || 3000} `);
 });

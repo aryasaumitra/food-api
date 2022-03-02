@@ -1,5 +1,6 @@
 const express = require("express");
-const foodController = require('../controller/foodController');
+const path = require('path');
+const foodController = require(path.join(__dirname,'../controller/foodController'));
 const app = express()
 
 //reading all foods

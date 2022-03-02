@@ -1,4 +1,5 @@
-const FoodModel = require('../models/food');
+const path = require('path');
+const FoodModel = require(path.join(__dirname,'../models/food'));
 
 exports.findAll = (req,res)=>{
 
