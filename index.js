@@ -151,7 +151,9 @@ router.put('/book/:id',(req,res)=>{
 })
 
 
-
+router.get('/',(req,res)=>{
+    res.send({'message':'server ready'})
+})
 
 router.get('/home',(req,res)=>{
     var responseText = 'Hello World!<br>'
