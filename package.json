@@ -1,0 +1,24 @@
+{
+  "name": "food-api",
+  "version": "1.0.0",
+  "description": "A simple food API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "api",
+    "mvc"
+  ],
+  "author": "Arya Saumitra",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2",
+    "install": "^0.13.0",
+    "mongoose": "^6.2.2",
+    "nodemon": "^2.0.15",
+    "npm": "^8.5.0"
+  }
+}
